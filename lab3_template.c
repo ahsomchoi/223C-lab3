@@ -124,7 +124,7 @@ void queue_free(struct Queue* queue) {
   //then free queue
   while(dummy!=NULL)
     {
-      
+      //
     }
   free(queue);
 }
