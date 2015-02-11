@@ -5,8 +5,7 @@
 
   Lab 3: structures and dynamic memory
 
-  Authors: Kevin Wortman (kwortman@csu.fullerton.edu) (REPLACE THIS
-  WITH YOUR NAMES AND CSUF EMAIL ADDRESSES)
+  Authors: Ah Som Choi (ahsomsid@csu.fullerton.edu)
 
 */ 
 
@@ -89,9 +88,15 @@ void queue_print(struct Queue* queue);
    rewritten. However the definitions (interfaces) should stay the
    same.
 */
+struct Node {
+  Node * prev;
+  Node * next;
+  int data;
+}
+;
 
 struct Queue {
-  int data[QUEUE_CAPACITY];
+  Node * dummy;
   int n;
 };
 
@@ -103,6 +108,12 @@ struct Queue* queue_make() {
     return NULL;
 
   queue->n = 0;
+  dummy = malloc(sizeof(struct Node));
+  if (dummy == NULL)
+    return NULL;
+  dummy->prev = NULL;
+  dummy->next = NULL;
+  dummy->data = 0;
 
   return queue;
 }
