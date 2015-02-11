@@ -113,13 +113,19 @@ struct Queue* queue_make() {
     return NULL;
   dummy->prev = NULL;
   dummy->next = NULL;
-  dummy->data = 0;
+  //dummy->data = 0;
 
   return queue;
 }
 
 void queue_free(struct Queue* queue) {
   assert(queue != NULL);
+  //free all the nodes first - while loop?
+  //then free queue
+  while(dummy!=NULL)
+    {
+      
+    }
   free(queue);
 }
   
